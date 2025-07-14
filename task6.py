@@ -19,17 +19,25 @@ def has_lower_letters(password):
 
 
 def has_symbols(password):
-	for letter in password:
-	    if (letter.isalpha() == False) and (letter.isdigit() == False):
-	    	return True
-	return False
+	return any(not letter.isalpha() and not letter.isdigit() for letter in password)
 
 
-score = 0
-functions = [is_very_long(password), has_digit(password), has_upper_letters(password), has_lower_letters(password), has_symbols(password)]
-for function in functions:
-	if function:
-		score+=2
+def main():
+	score = 0
+	functions = [
+		is_very_long(password),
+		has_digit(password),
+		has_upper_letters(password),
+		has_lower_letters(password),
+		has_symbols(password),
+	]
+
+	for function in functions:
+		if function:
+			score+=2
+			
+	print('Рейтинг пароля:',score)
 
 
-print('Рейтинг пароля:',score)
+if __name__ == '__main__':
+    main()
