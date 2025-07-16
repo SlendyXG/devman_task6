@@ -23,16 +23,16 @@ def main():
     password = input("Введите пароль: ")
     score = 0
     functions = [
-    is_very_long(password),
-    has_digit(password),
-    has_upper_letters(password),
-    has_lower_letters(password),
-    has_symbols(password),
+        is_very_long(password),
+        has_digit(password),
+        has_upper_letters(password),
+        has_lower_letters(password),
+        has_symbols(password),
     ]
     for function in functions:
         if function:
             score+=2
-    print('Рейтинг пароля:',score)
+    print('Рейтинг пароля:', score)
 
 
 if __name__ == '__main__':
